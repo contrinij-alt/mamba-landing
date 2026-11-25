@@ -2735,17 +2735,17 @@
       d.classList.add('js-fs');
       // near/in/parallax se calculan en scroll (el IntersectionObserver no ve elementos recortados con clip-path)
       var rm = matchMedia('(prefers-reduced-motion: reduce)').matches, tick = false;
-      var show = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); show.unobserve(e.target); } }); }, { threshold: .25 });
+      var show = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('in'); else if (e.boundingClientRect.top > 0) e.target.classList.remove('in'); }); }, { threshold: .25 });
       heads.forEach(function(e){ show.observe(e); });
       // Paso 12 (iOS): 1) h = clientHeight, no cambia cuando la barra de Safari se esconde (innerHeight sí, y movía todo de golpe);
       // 2) el parallax se mide sin su propio translate (antes leía su rect ya movido → se realimentaba y temblaba);
       // 3) primero se leen todos los rects y después se escribe (sin forzar layout por cada trazo).
       function upd(){ tick = false; var h = d.clientHeight, w = [];
         fs.forEach(function(e){ var r = e.getBoundingClientRect(), py = +e.dataset.py || 0, top = r.top - py, bot = r.bottom - py;
-          if (top < h * .82) w.push([e, 'in']); if (bot < -700 || top > h + 700) return; w.push([e, 'near']);
+          if (top < h * .82) w.push([e, 'in']); else if (top > h * .95) w.push([e, 'out']); if (bot < -700 || top > h + 700) return; w.push([e, 'near']);
           if (rm || e.classList.contains('m')) return; var bg = e.classList.contains('bg'), k = bg ? -.12 : -.06, p = bg ? e.parentNode.getBoundingClientRect() : { top: top, height: r.height };
           w.push([e, null, Math.round((p.top + p.height / 2 - h / 2) * k)]); });
-        w.forEach(function(x){ var e = x[0]; if (x[1]) { e.classList.add('near'); if (x[1] == 'in') e.classList.add('in'); return; }
+        w.forEach(function(x){ var e = x[0]; if (x[1] == 'out') { e.classList.remove('in'); return; } if (x[1]) { e.classList.add('near'); if (x[1] == 'in') e.classList.add('in'); return; }
           if (+e.dataset.py !== x[2]) { e.dataset.py = x[2]; e.style.setProperty('--py', x[2] + 'px'); } }); }
       var lw = innerWidth; addEventListener('scroll', function(){ if (!tick){ tick = true; requestAnimationFrame(upd); } }, { passive: true });
       addEventListener('resize', function(){ if (innerWidth !== lw) { lw = innerWidth; upd(); } }); upd();

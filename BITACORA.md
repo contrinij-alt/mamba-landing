@@ -805,3 +805,9 @@ Cada prompt se anota solo (hook en `.claude/settings.json`). Debajo de cada prom
 ## 2026-11-25 01:30 - Prompt
 
 > listo, ya inicié sesión
+
+## 2026-11-25 01:35 - Prompt
+
+> me gustaria que todos los graficos que se van dibujando cuando bajas tambien se desdibujen si volves a subir, pero no q desaparezcan si estas ahi
+
+**Hecho:** los trazos que se dibujan al bajar ahora se desdibujan al volver a subir. Solo se borran cuando el trazo queda de nuevo por debajo de la pantalla, así que no desaparecen mientras se ven. Lo mismo pasa con los subrayados de los títulos. Probado en el navegador de la compu; falta confirmarlo en el iPhone. Pendiente: regenerar `preview/landing-preview.html`.
