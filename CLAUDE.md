@@ -49,4 +49,5 @@ Hero → Qué vas a aprender → Lo que te llevás → Este curso es para vos si
 - El usuario prueba en **iPhone (Safari iOS)**, por el servidor Vite del puerto 5173. Todo efecto (máscaras CSS, sticky, animaciones atadas al scroll, parallax) tiene que andar bien en iOS Safari, también mientras el dedo arrastra la pantalla.
 - Imágenes siempre desde `assets/` en webp, con `loading="lazy"` (excepto el hero) y `alt` descriptivo.
 - No inventar testimonios, cifras ni premios.
+- Publicación: la web está en GitHub Pages (https://contrinij-alt.github.io/mamba-landing/, repo `contrinij-alt/mamba-landing`, rama `main`). Al terminar cada paso, hacer commit y `git push` para que el link quede actualizado. `Marca Personal MATIMAMBA/` está en `.gitignore`: nunca subirla.
 - Bitácora: cada prompt del usuario se anota solo en `BITACORA.md` (hook). Al terminar cada prompt, agregar debajo un bloque "**Hecho:**" con lo que se cambió y lo que quedó pendiente.
