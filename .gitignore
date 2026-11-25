@@ -1,0 +1,8 @@
+# Material original del cliente: privado, no se publica
+Marca Personal MATIMAMBA/
+# Archivos locales de Claude
+.claude/settings.local.json
+.playwright-mcp/
+.vite/
+.claude/
+node_modules/

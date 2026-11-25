@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freestyle al Natural · Curso online de Mati (Mamba)</title>
+<meta name="description" content="Curso online de freestyle para barberos. Método ARTE EN LÍNEAS: 12 clases, +8 h de contenido, acceso de por vida. Diseños sin pigmento ni edición.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --negro:#101010; --morado-prof:#0E002C; --morado:#301764; --energia:#764CFF; --blanco:#fff; --naranja:#FF7800;
+    /* cambiar acá cuando lleguen los archivos de Giga Sans */
+    --font:"Giga Sans","Outfit",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--negro);color:var(--blanco);line-height:1.55;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  .wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+  section{padding:4.5rem 0}
+  h1,h2,h3{line-height:1.05;font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
+  h2{font-size:clamp(2rem,8vw,3.5rem);margin-bottom:1.5rem}
+  h2 em,h1 em{font-style:normal;color:var(--energia)}
+  .kicker{font-size:.8rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--energia);margin-bottom:.75rem}
+  .hero .kicker{color:var(--blanco);text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  .hero h1,.hero p{text-shadow:0 2px 12px rgba(0,0,0,.6)}
+  p+p{margin-top:1rem}
+  .muted{color:#c9c2dd}
+  .btn{display:inline-block;background:var(--naranja);color:var(--negro);font-weight:800;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;padding:1.05rem 1.6rem;border-radius:999px;text-align:center;transition:transform .15s,box-shadow .15s;box-shadow:0 10px 30px -10px var(--naranja)}
+  .btn:hover,.btn:focus-visible{transform:translateY(-2px);box-shadow:0 16px 40px -10px var(--naranja)}
+  .btn:focus-visible{outline:3px solid var(--blanco);outline-offset:3px}
+
+  /* header */
+  header{position:fixed;inset:0 0 auto;z-index:10;background:rgba(16,16,16,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(118,76,255,.2)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .logo{font-weight:900;letter-spacing:.25em;text-decoration:none}
+  header .btn{padding:.6rem 1rem;font-size:.75rem;box-shadow:none}
+
+  /* hero */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:7rem 0 3rem;overflow:hidden}
+  .hero picture,.hero>img{position:absolute;inset:0}
+  .hero>img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,16,16,.2) 0%,rgba(14,0,44,.55) 45%,var(--negro) 92%)}
+  .hero .wrap{position:relative;z-index:1}
+  .hero h1{font-size:clamp(3rem,15vw,7rem);margin-bottom:1rem}
+  .hero .lead{font-size:1.15rem;max-width:34ch;margin-bottom:1.75rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;list-style:none}
+  .chips li{border:1px solid rgba(118,76,255,.6);background:rgba(48,23,100,.4);padding:.35rem .8rem;border-radius:999px;font-size:.85rem}
+
+  /* aprender */
+  .glow{background:radial-gradient(ellipse at 20% 0%,rgba(118,76,255,.25),transparent 60%),var(--negro)}
+  .grid2{display:grid;gap:2.5rem}
+  .clases{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+  .clase{background:linear-gradient(160deg,var(--morado),var(--morado-prof));border:1px solid rgba(118,76,255,.35);border-radius:1.25rem;padding:1.5rem}
+  .clase b{display:block;font-size:3rem;font-weight:900;color:var(--energia);line-height:1}
+  .clase span{font-weight:600;text-transform:uppercase;font-size:.85rem}
+  .gancho{margin-top:2.5rem;font-size:clamp(1.4rem,5vw,2.2rem);font-weight:900;text-transform:uppercase;line-height:1.15;border-left:4px solid var(--naranja);padding-left:1rem}
+
+  /* te llevás */
+  .cards{display:grid;gap:1rem}
+  .card{background:rgba(48,23,100,.25);border:1px solid rgba(118,76,255,.3);border-radius:1.25rem;padding:1.75rem}
+  .card h3{font-size:1.2rem;margin-bottom:.75rem}
+  .card .n{color:var(--energia);font-weight:900;font-size:.85rem;letter-spacing:.2em;display:block;margin-bottom:.75rem}
+
+  /* para vos */
+  .para{background:var(--morado-prof)}
+  .checks{list-style:none;display:grid;gap:.75rem}
+  .checks li{display:flex;gap:.85rem;align-items:flex-start;background:rgba(255,255,255,.04);border-radius:.9rem;padding:1rem 1.1rem;font-weight:600}
+  .checks li::before{content:"";flex:0 0 1.4rem;height:1.4rem;border-radius:50%;background:var(--energia) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12l5 5L19 7'/%3E%3C/svg%3E") center/70% no-repeat;margin-top:.1rem}
+  .nota{margin-top:1.5rem;font-size:.95rem}
+
+  /* galería */
+  .galeria{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+  .galeria img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:1rem}
+
+  /* quién soy */
+  .quien img{border-radius:1.5rem;width:100%;aspect-ratio:4/5;object-fit:cover}
+  .quien .fotos{display:grid;grid-template-columns:2fr 1fr;gap:.6rem}
+  .quien .fotos div{display:grid;gap:.6rem}
+  .quien .fotos>*,.grid2>*{min-width:0}
+  .valores{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;font-weight:900;text-transform:uppercase;color:var(--energia)}
+
+  /* faq */
+  details{border-bottom:1px solid rgba(118,76,255,.3)}
+  summary{cursor:pointer;list-style:none;padding:1.25rem 2.5rem 1.25rem 0;font-weight:600;font-size:1.05rem;position:relative}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";position:absolute;right:.25rem;top:50%;transform:translateY(-50%);font-size:1.6rem;color:var(--energia);transition:transform .2s}
+  details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+  details p{padding:0 0 1.25rem;color:#c9c2dd}
+
+  /* cta final */
+  .final{position:relative;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 100%,rgba(118,76,255,.45),transparent 65%),var(--morado-prof)}
+  .final h2{max-width:16ch;margin-inline:auto}
+  .final ul{list-style:none;display:grid;gap:.4rem;margin:1.5rem 0 2rem;font-weight:600}
+  .final ul li::before{content:"✓ ";color:var(--energia)}
+  footer{padding:2rem 0;font-size:.85rem;color:#8d86a3;text-align:center}
+
+  @media (min-width:768px){
+    section{padding:6.5rem 0}
+    .grid2{grid-template-columns:1fr 1fr;align-items:center}
+    .cards{grid-template-columns:repeat(3,1fr)}
+    .checks{grid-template-columns:1fr 1fr}
+    .galeria{grid-template-columns:repeat(3,1fr);gap:1rem}
+    .hero .lead{font-size:1.3rem}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">MAMBA</a>
+    <a class="btn" href="#comprar">Quiero el curso</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <img src="assets/personales/aleboscov-101.webp" alt="Mati, barbero y artista, fundador de Mamba Barber Studio" width="1280" height="1600" fetchpriority="high">
+    <div class="wrap">
+      <p class="kicker">Curso online · Método ARTE EN LÍNEAS</p>
+      <h1>Freestyle <em>al natural</em></h1>
+      <p class="lead">Un método para crear tus propios diseños infinitamente. Sin pigmento ni edición: solo pelo, limpieza de trazo y técnica.</p>
+      <a class="btn" href="#comprar">Quiero aprender el método</a>
+      <ul class="chips">
+        <li>12 clases</li><li>+8 h de contenido</li><li>Material en PDF</li><li>Acceso de por vida</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="glow" id="aprender">
+    <div class="wrap grid2">
+      <div>
+        <p class="kicker">¿Qué vas a aprender?</p>
+        <h2>Un <em>método</em>, no una plantilla</h2>
+        <p>Este curso te da un MÉTODO: un sistema para que puedas crear tus propios diseños infinitamente, sin repetirte ni que se vean parecidos.</p>
+        <p class="muted">La creatividad es un músculo y muchos todavía no lo entrenan. Por eso vas a recibir ejercicios para practicar y crear diseños sin necesidad de tener modelos reales.</p>
+        <p class="muted">Si ya hacés diseños y querés mejorarlos o llegar a buenos resultados sin pigmentación, también estás en el lugar correcto: vas a tener clases grabadas sobre modelos reales, con técnicas y recursos que van a llevar tus diseños a otro nivel.</p>
+      </div>
+      <div>
+        <p>El método <strong>“ARTE EN LÍNEAS”</strong> se aprende en papel y se plasma en el cabello.</p>
+        <div class="clases">
+          <div class="clase"><b>4</b><span>Clases teórico-prácticas para crear diseños de 0 a 100</span></div>
+          <div class="clase"><b>8</b><span>Clases demostrativas: distintos diseños, tamaños y dificultades</span></div>
+        </div>
+        <p class="gancho">Entra un barbero bloqueado, sale un artista en líneas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="incluye">
+    <div class="wrap">
+      <p class="kicker">Lo que te llevás</p>
+      <h2>Todo para crear <em>tu freestyle</em></h2>
+      <div class="cards">
+        <article class="card">
+          <span class="n">01</span>
+          <h3>Un método replicable e infinito</h3>
+          <p class="muted">Para que puedas crear diseños saloneros, para redes o para competir. La creatividad no es un don: es una habilidad que se entrena.</p>
+        </article>
+        <article class="card">
+          <span class="n">02</span>
+          <h3>Clases teóricas y en modelos reales, para siempre</h3>
+          <p class="muted">Más de 8 h de contenido grabado, más de 4 modelos distintos y material en PDF. Acceso de por vida: entrás cuando querés y lo volvés a ver.</p>
+        </article>
+        <article class="card">
+          <span class="n">03</span>
+          <h3>Técnicas y resultados naturales</h3>
+          <p class="muted">Vas a lograr diseños como los que ves en redes sin necesidad de tinte, usando solo el pelo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="para" id="para-vos">
+    <div class="wrap">
+      <p class="kicker">Este curso es para vos si…</p>
+      <h2>¿Te <em>suena</em>?</h2>
+      <ul class="checks">
+        <li>Querés hacer tus propios diseños pero no confiás en tu creatividad</li>
+        <li>Querés ser conocido en las redes por tus diseños</li>
+        <li>Te cuesta que tus diseños queden limpios, prolijos y conectados</li>
+        <li>Necesitás un paso a paso para aprender a hacer freestyle</li>
+        <li>Te frustrás por no saber crear un diseño desde 0</li>
+        <li>Replicás diseños que ves en redes pero tenés ganas de crear tu freestyle</li>
+        <li>Te gustan los diseños pero no querés depender de pigmentar</li>
+        <li>Tus clientes te piden diseños y te cansaste de hacer siempre los mismos</li>
+      </ul>
+      <p class="nota muted">Importante: el curso no enseña a cortar. Es para barberos que ya manejan las herramientas y quieren llevar sus cortes al lado artístico.</p>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="wrap">
+      <p class="kicker">Galería</p>
+      <h2>Solo pelo. <em>Sin tinte.</em></h2>
+      <div class="galeria">
+        <img src="assets/cortes/img_2002.webp" alt="Diseño freestyle de líneas en el lateral de un corte" width="675" height="1200" loading="lazy">
+        <img src="assets/cortes/img_2295.webp" alt="Diseño freestyle con curvas hecho a navaja y patillera" width="675" height="1200" loading="lazy">
+        <img src="assets/cortes/img_2431.webp" alt="Diseño freestyle de líneas conectadas sin pigmento" width="675" height="1200" loading="lazy">
+        <img src="assets/cortes/img_7431.webp" alt="Diseño freestyle en la nuca con trazos limpios" width="675" height="1200" loading="lazy">
+        <img src="assets/cortes/img_8582.webp" alt="Diseño freestyle con contrastes de grosor de línea" width="675" height="1200" loading="lazy">
+        <img src="assets/cortes/img_9714.webp" alt="Diseño freestyle terminado, al natural y sin edición" width="675" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="glow" id="quien-soy">
+    <div class="wrap grid2 quien">
+      <div class="fotos">
+        <img src="assets/personales/aleboscov-148.webp" alt="Mati sentado, retrato en estudio con luz lateral" width="1280" height="1600" loading="lazy">
+        <div>
+          <img src="assets/personales/aleboscov-153.webp" alt="Retrato de Mati en Mamba Barber Studio" width="1280" height="1600" loading="lazy">
+          <img src="assets/personales/aleboscov-165.webp" alt="Mati con una tabla de skate pintada con graffiti morado" width="1280" height="1600" loading="lazy">
+        </div>
+      </div>
+      <div>
+        <p class="kicker">¿Quién soy?</p>
+        <h2>Soy <em>Mati</em></h2>
+        <p>Artista, barbero y educador, fundador de Mamba Barber Studio. Llevo 3 años creando y mostrando mis diseños en redes, y nunca encontré dónde capacitarme para aprender más sobre el tema.</p>
+        <p class="muted">Yo también pensaba que no tenía creatividad. Pero en 2025 creé un sistema que permite crear diseños infinitos, de distintos tipos y tamaños: el mismo que usaba para hacer los míos, pero ordenado y mejorado. Mientras lo aplicaba, lo enseñaba, y los resultados mejoraron en todo sentido.</p>
+        <p class="muted">Ahora creé este curso para que aprendas el sistema que me ayudó a llevar mi freestyle y el de muchos colegas a OTRO NIVEL, y las técnicas que me permiten lograr mis resultados AL NATURAL.</p>
+        <div class="valores"><span>Precisión.</span><span>Actitud.</span><span>Constancia.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="para" id="y-si">
+    <div class="wrap">
+      <p class="kicker">Lo que te frena</p>
+      <h2>¿Y <em>si…</em>?</h2>
+      <div class="cards" style="margin-top:2rem">
+        <div class="card"><h3>…a él le sale porque corta hace más tiempo?</h3><p>El tiempo de práctica es importante, pero lo que trae resultados es aprender esto de manera completa y ordenada.</p></div>
+        <div class="card"><h3>…ya lo intenté mil veces y me queda horrible?</h3><p>La práctica te hace mejorar día a día, pero ¿cómo esperás mejorar si todavía no aprendiste un sistema de técnicas para hacerlos?</p></div>
+        <div class="card"><h3>…se ven bien porque tiene buena cámara?</h3><p>El impacto de un diseño está en cómo combinás las técnicas. Un buen diseño es llamativo hasta con la cámara de más baja resolución.</p></div>
+        <div class="card"><h3>…los diseños no me hacen ganar plata?</h3><p>Gané mucha plata haciendo diseños para ocasiones especiales de mis clientes, capacitando colegas y mostrándome en redes. Es un arte muy valorado.</p></div>
+        <div class="card"><h3>…prefiero aprender presencial?</h3><p>Vas a aprender más que en una clase presencial, con más horas de contenido y a un costo más accesible. Y la explicación es la misma.</p></div>
+        <div class="card"><h3>…no me resuelve los errores que tengo?</h3><p>Gran parte del curso está dedicada a que trabajes bien con cada herramienta, para lograr trazos limpios y resolver los errores típicos al hacer un diseño.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <p class="kicker">Preguntas frecuentes</p>
+      <h2>Sacate las <em>dudas</em></h2>
+      <details><summary>¿El curso me queda para siempre?</summary><p>Sí. Comprando el curso tenés acceso de por vida. Podés volver a verlo cuando quieras, desde donde quieras.</p></details>
+      <details><summary>¿Tengo que tener buenas máquinas?</summary><p>No. Lo más importante para lograr un buen diseño es la técnica: no es la flecha, es el indio. En el curso está todo lo que necesitás para llegar a los resultados que querés.</p></details>
+      <details><summary>¿Son solo clases dibujando en papel?</summary><p>No. El curso tiene 12 clases: solo 4 son teóricas en papel, y el resto son en modelos reales.</p></details>
+      <details><summary>¿En qué me va a servir comprar este curso?</summary><p>Te va a ayudar a crear y/o mejorar tu freestyle para que puedas mostrarlo en redes, ser “el barbero de los diseños” y que la gente reconozca tus trabajos con solo verlos.</p></details>
+      <details><summary>¿Me sirve para el día a día?</summary><p>Sí. Con el método vas a poder crear diseños saloneros, para redes o para competir, rápido y fácil. Además, siempre hay clientes que lo piden.</p></details>
+      <details><summary>¿Seguro usás pigmento o edición?</summary><p>No. Mis diseños no necesitan pigmento ni edición, porque enfoco el trabajo en la limpieza de cada trazo y en el uso correcto de las herramientas en cada técnica.</p></details>
+      <details><summary>¿Los cursos online sirven para aprender esto?</summary><p>El curso tiene material teórico y demostrativo, digital y en cabello. Cada modelo grabado responde a problemas distintos, y vas a tener ejercicios para practicar mientras estudiás.</p></details>
+      <details><summary>¿Y si no tengo al profe corrigiéndome al lado?</summary><p>El curso te queda para siempre: podés entrar a resolver tus dudas cuando quieras, y también estoy a tu disposición por DM de Instagram para ayudarte.</p></details>
+      <details><summary>¿Tengo que tener tarjeta de crédito?</summary><p>No necesariamente. Si sos de Argentina, podés abonar con tu dinero en cuenta de MercadoPago en un instante.</p></details>
+      <details><summary>¿Cuánto tarda en llegar?</summary><p>Una vez abonado, el acceso es inmediato. Te llega una invitación a tu mail y listo, ya podés empezar (revisá spam y promociones).</p></details>
+      <details><summary>Compro el curso, ¿y si no consigo modelos?</summary><p>Siempre hay dos personas que se van a copar para un diseño: el que tiene el pelo corto y le crece rápido, y al que le gusta hacerse locuras en la cabeza. Con cualquiera de ellos podés crear muchas piezas distintas. Yo repito los mismos 2 o 3 modelos siempre.</p></details>
+    </div>
+  </section>
+
+  <section class="final" id="comprar">
+    <div class="wrap">
+      <p class="kicker">Freestyle al natural</p>
+      <h2>Dejá de copiar. <em>Empezá a crear.</em></h2>
+      <ul>
+        <li>12 clases: 4 teórico-prácticas + 8 en modelos reales</li>
+        <li>+8 h de contenido y material en PDF</li>
+        <li>Acceso inmediato y de por vida</li>
+      </ul>
+      <!-- pendiente: precio y links de pago (MercadoPago + internacional) -->
+      <a class="btn" href="#comprar">Quiero el curso</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">MAMBA Barber Studio · Freestyle al Natural</div>
+</footer>
+
+</body>
+</html>
